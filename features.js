@@ -20,13 +20,11 @@ async function addTask(name,date){
   }
   
   async function deleteTask(id){
-    console.log("about to delete task with id", id);
     const task= await dbb.Todo.findOne({
         where:{
             Id: id
         }
     })
-    console.log("this is the task to destroy", task)
     await task.destroy();
   }
   

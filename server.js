@@ -8,25 +8,26 @@ app.listen(8080);
 console.log('Server is listening on port 8080');
 
 app.get("/api/task", async (req, res) => {
-  console.log("request came");
   const tasks=await ft.getTasks();
-  res.send(tasks)
+  if(tasks.length){
+    res.send(tasks)
+  }
+  else{
+    res.send('The list is empty!')
+  }
 })
 app.post("/api/task", async (req, res) => {
-  console.log("request came");
   await  ft.addTask(req.body.task,req.body.date);
-  res.send('Task Added');
+  res.send('Task added succesfully!');
 })
 app.delete("/api/task/:id", async (req, res) => {
   const id = req.params.id;
-  console.log("request came");
   await  ft.deleteTask(toInteger(id));
-  res.send('Task deleted');
+  res.send('Task deleted succesfully!');
 })
 
 app.put("/api/task/:id", async (req, res) => {
   const id = req.params.id;
-  console.log("request came");
   await  ft.editTask(toInteger(id),req.body.task,req.body.date,req.body.done);
-  res.send('Task updated');
+  res.send('Task updated succesfully!');
 })
