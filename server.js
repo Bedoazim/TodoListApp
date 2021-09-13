@@ -14,19 +14,19 @@ app.get("/api/task", async (req, res) => {
 })
 app.post("/api/task", async (req, res) => {
   console.log("request came");
-  await  ft.addTask('Pray fajr','09-19-2021');
+  await  ft.addTask(req.body.task,req.body.date);
   res.send('Task Added');
 })
 app.delete("/api/task/:id", async (req, res) => {
   const id = req.params.id;
   console.log("request came");
   await  ft.deleteTask(toInteger(id));
-  res.send('Task Added');
+  res.send('Task deleted');
 })
 
 app.put("/api/task/:id", async (req, res) => {
   const id = req.params.id;
   console.log("request came");
   await  ft.editTask(toInteger(id),req.body.task,req.body.date,req.body.done);
-  res.send('Task Added');
+  res.send('Task updated');
 })
