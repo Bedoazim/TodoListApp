@@ -1,0 +1,29 @@
+{
+  "name": "todolistapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "database.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bedoazim/TodoListApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bedoazim/TodoListApp/issues"
+  },
+  "homepage": "https://github.com/Bedoazim/TodoListApp#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "jshint": "^2.13.1",
+    "nodemon": "^2.0.12",
+    "sequelize": "^6.6.5",
+    "sqlite3": "^5.0.2"
+  }
+}
