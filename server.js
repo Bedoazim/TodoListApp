@@ -25,8 +25,8 @@ app.delete("/api/task/:id", async (req, res) => {
 })
 
 app.put("/api/task/:id", async (req, res) => {
-  const id = req.params;
+  const id = req.params.id;
   console.log("request came");
-  await  ft.editTask(toInteger(id));
+  await  ft.editTask(toInteger(id),req.body.task,req.body.date,req.body.done);
   res.send('Task Added');
 })
